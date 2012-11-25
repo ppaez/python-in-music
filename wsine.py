@@ -11,8 +11,8 @@ def create_sine( frequency, amplitude=30000, duration=1000, sampleRate=44100 ):
     samples = samplesPerCycle.numerator
     cycles = samplesPerCycle.denominator
 
-    print frequency, 'cycles/s', sampleRate, 'samples/s:', \
-        samples, 'samples for', cycles, 'cycles'
+    print(frequency, 'cycles/s', sampleRate, 'samples/s:', \
+        samples, 'samples for', cycles, 'cycles')
 
     ivalues = []
     values = []
@@ -26,11 +26,10 @@ def create_sine( frequency, amplitude=30000, duration=1000, sampleRate=44100 ):
         ivalues.append( value )
 
     repeat = int( sampleRate / samples * duration / 1000. )
-    print '  repeat', repeat, 'times for one second.'
+    print('  repeat', repeat, 'times for one second.')
     for i in range( repeat ):
         for low_byte, high_byte in values:
-            f.write( chr(low_byte) )
-            f.write( chr(high_byte) )
+            f.write( bytes( (low_byte, high_byte) ) )
         for value in ivalues:
             f2.write( str(value) + '\n' )
 

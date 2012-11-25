@@ -1,7 +1,7 @@
 Using Python in music
 =====================
 
-Examples of audio and MIDI with Python.
+Examples of audio and MIDI with Python 3.
 
 The examples are being published in
 the wiki at LinuxCabal:
@@ -19,7 +19,7 @@ reproduced with a standard audio player.
 
 To run::
 
- python wsine.py
+ python3 wsine.py
 
 This produces the file `sine.raw`.  Each data
 is 16-bit signed little endian, with a sampling
